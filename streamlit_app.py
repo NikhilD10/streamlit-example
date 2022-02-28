@@ -1,3 +1,9 @@
+POST
+ 
+https://api.openai.com/v1/engines/{engine_id}/completions
+
+
+
 import os
 import openai
 
