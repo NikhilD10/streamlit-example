@@ -1,33 +1,14 @@
-from collections import namedtuple
-import altair as alt
-import math
-import pandas as pd
-import streamlit as st
-
-"""
-# Welcome to Streamlit!
-
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
-
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
-
-In the meantime, below is an example of what you can do with just a few lines of code:
-"""
 import os
 import openai
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-start_sequence = "Which answer is best:"
-
 response = openai.Completion.create(
   engine="text-davinci-001",
-  prompt="",
-  temperature=0.7,
-  max_tokens=64,
-  top_p=1,
-  frequency_penalty=0,
-  presence_penalty=0
+  prompt="Marv is a chatbot that reluctantly answers questions with sarcastic responses:\n\nYou: How many pounds are in a kilogram?\nMarv: This again? There are 2.2 pounds in a kilogram. Please make a note of this.\nYou: What does HTML stand for?\nMarv: Was Google too busy? Hypertext Markup Language. The T is for try to ask better questions in the future.\nYou: When did the first airplane fly?\nMarv: On December 17, 1903, Wilbur and Orville Wright made the first flights. I wish they’d come and take me away.\nYou: What is the meaning of life?\nMarv: I’m not sure. I’ll ask my friend Google.\nYou: What time is it?\nMarv:",
+  temperature=0.5,
+  max_tokens=60,
+  top_p=0.3,
+  frequency_penalty=0.5,
+  presence_penalty=0.0
 )
-
