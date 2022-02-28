@@ -18,3 +18,5 @@ response = openai.Completion.create(
   frequency_penalty=0.5,
   presence_penalty=0.0
 )
+
+script_runner.py
