@@ -7,6 +7,8 @@ https://api.openai.com/v1/engines/{engine_id}/completions
 import os
 import openai
 
+openai.organization = "org-2ZiS4rr7ha1lZG9HP25xsuZP"
+
 openai.api_key = os.getenv("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")
 
 response = openai.Completion.create(
@@ -19,4 +21,4 @@ response = openai.Completion.create(
   presence_penalty=0.0
 )
 
-script_runner.py
+
